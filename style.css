@@ -1,57 +1,47 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Verwijdert scrollen op de hoofdpagina */
+}
+
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #293c6a; /* Achtergrondkleur grijs */
+    background: linear-gradient(135deg, #800080, #0000FF); /* Paarse-blauwe gradient */
     color: #fff; /* Tekstkleur wit */
     text-align: center;
-    background: url(back.png) no-repeat center center fixed; 
-    background-size: cover;
+    overflow: auto; /* Laat scrollen binnen de pagina toe */
     height: 100%;
-    overflow: hidden;
-
 }
-
-h2 {
-    text-align: center;
-    font-size: 40px;
-    margin: auto;
-    padding: auto;
-}
-
-p {
-    text-align: center;
-    font-size: 30px;
-    margin: auto;
-    padding: auto;
-}
-
-main {
-    flex-grow: 1;
-    display: flex;
-    background: url(back.png) no-repeat center center fixed; 
-    background-size: cover;
-    height: 100%;
-    overflow: hidden;
-}
-
-.articleshome article {
-    border: 1px solid #000; /* Randkleur zwart */
-    padding: 100px;
-    text-align: center;
-    background-color: #000; /* Achtergrondkleur zwart */
-    justify-content: center;
-}
-
-
 
 header {
-    background-color: #000000;
+    display: flex; /* Hiermee maken we de header een flex-container */
+    align-items: center; /* Hiermee centreren we de items verticaal */
+}
+
+header img {
+    width: 2em; /* Hier kun je de grootte aanpassen, bijvoorbeeld in ems */
+    height: auto; /* Zorgt ervoor dat de verhoudingen behouden blijven */
+    margin-right: 10px; /* Ruimte toegevoegd aan de rechterkant van de afbeelding */
+}
+
+header nav {
+    flex-grow: 1; /* Hiermee laat je de navigatie de resterende ruimte innemen */
+}
+
+header, footer {
+    flex-shrink: 0;
+    background-color: #000;
     color: #fff;
     padding: 20px;
     font-size: 20px;
+}
 
+header img {
+    width: 2em; /* Hier kun je de grootte aanpassen, bijvoorbeeld in ems */
+    height: auto; /* Zorgt ervoor dat de verhoudingen behouden blijven */
+    margin-right: 10px; /* Ruimte toegevoegd aan de rechterkant van de afbeelding */
 }
 
 nav ul {
@@ -70,33 +60,85 @@ nav ul li a {
     text-decoration: none;
 }
 
-footer {
-    background-color: #000000;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-
-}
-  
-
-  .flex-container {
+main {
+    flex: 1 0 auto;
     display: flex;
-    flex-wrap: wrap; /* Zorgt ervoor dat de artikelen naar de volgende regel gaan als er niet genoeg ruimte is */
-    justify-content: space-evenly; /* Verdeelt de ruimte tussen de artikelen gelijkmatig */
-    background-color: #293c6a; /* Achtergrondkleur grijs */
-    padding: 20px; /* Voegt wat ruimte toe rondom de artikelen */
+    flex-direction: column;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgba(135deg, #800080, #0000FF);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
 }
 
 .flex-container > article {
-    border: 1px solid #000; /* Randkleur zwart */
+    border: 1px solid #000;
     padding: 20px;
-    text-align: center;
-    background-color: #000; /* Achtergrondkleur zwart */
-    flex: 1 0 30%; /* Zorgt ervoor dat de artikelen flexibel zijn en maximaal 30% van de container in beslag nemen */
-    margin: 10px; /* Ruimte tussen de artikelen */
-    color: #fff; /* Tekstkleur wit */
-    font-size: 20px; /* Tekstgrootte */
-
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 10px 0;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 10px;
+    min-height: 300px;
 }
 
+h2 {
+    font-size: 40px;
+    margin: 20px 0;
+}
 
+h3 {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .flex-container {
+        align-items: center;
+    }
+
+    .flex-container > article {
+        flex: 1 0 90%;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+}
