@@ -1,0 +1,144 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Verwijdert scrollen op de hoofdpagina */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #800080, #0000FF); /* Paarse-blauwe gradient */
+    color: #fff; /* Tekstkleur wit */
+    text-align: center;
+    overflow: auto; /* Laat scrollen binnen de pagina toe */
+    height: 100%;
+}
+
+header {
+    display: flex; /* Hiermee maken we de header een flex-container */
+    align-items: center; /* Hiermee centreren we de items verticaal */
+}
+
+header img {
+    width: 2em; /* Hier kun je de grootte aanpassen, bijvoorbeeld in ems */
+    height: auto; /* Zorgt ervoor dat de verhoudingen behouden blijven */
+    margin-right: 10px; /* Ruimte toegevoegd aan de rechterkant van de afbeelding */
+}
+
+header nav {
+    flex-grow: 1; /* Hiermee laat je de navigatie de resterende ruimte innemen */
+}
+
+header, footer {
+    flex-shrink: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    font-size: 20px;
+}
+
+header img {
+    width: 2em; /* Hier kun je de grootte aanpassen, bijvoorbeeld in ems */
+    height: auto; /* Zorgt ervoor dat de verhoudingen behouden blijven */
+    margin-right: 10px; /* Ruimte toegevoegd aan de rechterkant van de afbeelding */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgba(135deg, #800080, #0000FF);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.flex-container > article {
+    border: 1px solid #000;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 10px 0;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 10px;
+    min-height: 300px;
+}
+
+h2 {
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+h3 {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .flex-container {
+        align-items: center;
+    }
+
+    .flex-container > article {
+        flex: 1 0 90%;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+}
